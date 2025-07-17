@@ -1,0 +1,10 @@
+# Ignore node_modules and config stuff
+node_modules/
+.vscode/
+.stylelintcache
+
+# OS junk
+.DS_Store
+
+# Optional: ignore environment files
+.env
