@@ -1,0 +1,11 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+}

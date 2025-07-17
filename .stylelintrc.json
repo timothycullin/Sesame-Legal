@@ -1,0 +1,28 @@
+{
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "display",
+        "width",
+        "height",
+        "margin",
+        "padding",
+        "color",
+        "background",
+        "border",
+        "box-shadow"
+      ],
+      {
+        "unspecified": "bottomAlphabetical"
+      }
+    ],
+    "media-feature-range-notation": "prefix"
+  }
+}
