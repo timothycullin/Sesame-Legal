@@ -140,7 +140,7 @@ headers.forEach(header => {
     }
   });
 
-  // Mobile touch feedback for pressing using CSS class
+  // Touch events for mobile pressed state
   header.addEventListener('touchstart', () => {
     header.classList.add('pressed');
   });

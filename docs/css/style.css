@@ -412,6 +412,16 @@ main {
   transition-duration: 0.25s;
 }
 
+.accordion-header.pressed:not([aria-expanded="true"]) {
+  background-color: #C6C2FF;
+  transition-duration: 0.25s;
+}
+
+.accordion-header.pressed[aria-expanded="true"] {
+  background-color: #ECEBFF;
+  transition-duration: 0.25s;
+}
+
 .accordion-arrow {
   display: block;
   width: 1.375rem; /* 22px */
