@@ -123,26 +123,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Accordion.js
-const headers = document.querySelectorAll('.accordion-header');
-
-headers.forEach(header => {
+document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', () => {
     const isExpanded = header.getAttribute('aria-expanded') === 'true';
 
-    headers.forEach(h => {
+    // Close all accordion items
+    document.querySelectorAll('.accordion-header').forEach(h => {
       h.setAttribute('aria-expanded', 'false');
-      h.nextElementSibling.hidden = true;
+      if (h.nextElementSibling) {
+        h.nextElementSibling.hidden = true;
+      }
     });
 
+    // Open clicked if it was closed
     if (!isExpanded) {
       header.setAttribute('aria-expanded', 'true');
-      header.nextElementSibling.hidden = false;
+      if (header.nextElementSibling) {
+        header.nextElementSibling.hidden = false;
+      }
     }
   });
 });
-
-document.body.addEventListener("touchstart", function () { }, { passive: true });
-
 
 // ContactForm.js
 function validateForm(event) {

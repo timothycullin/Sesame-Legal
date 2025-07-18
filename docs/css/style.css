@@ -386,7 +386,7 @@ main {
   font-weight: 500;
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
-/*   touch-action: manipulation; */
+  touch-action: manipulation;
   transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   user-select: none;
 }
