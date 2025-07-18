@@ -139,6 +139,24 @@ headers.forEach(header => {
       header.nextElementSibling.hidden = false;
     }
   });
+
+  // Mobile touch feedback for pressing
+  header.addEventListener('touchstart', () => {
+    header.style.backgroundColor = '#C6C2FF';  // immediate pressed color
+    header.style.transitionDuration = '0s';    // no fade delay
+  });
+
+  header.addEventListener('touchend', () => {
+    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+    header.style.backgroundColor = isExpanded ? '#C6C2FF' : '#ECEBFF';
+    header.style.transitionDuration = '0.25s'; // smooth fade back
+  });
+
+  header.addEventListener('touchcancel', () => {
+    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+    header.style.backgroundColor = isExpanded ? '#C6C2FF' : '#ECEBFF';
+    header.style.transitionDuration = '0.25s';
+  });
 });
 
 // ContactForm.js
