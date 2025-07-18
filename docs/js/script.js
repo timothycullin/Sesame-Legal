@@ -145,6 +145,17 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   });
 });
 
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('mousedown', () => header.classList.add('active'));
+  header.addEventListener('mouseup', () => header.classList.remove('active'));
+  header.addEventListener('mouseleave', () => header.classList.remove('active'));
+
+  header.addEventListener('touchstart', () => header.classList.add('active'));
+  header.addEventListener('touchend', () => header.classList.remove('active'));
+  header.addEventListener('touchcancel', () => header.classList.remove('active'));
+});
+
+
 // ContactForm.js
 function validateForm(event) {
   const textarea = document.getElementById('message');

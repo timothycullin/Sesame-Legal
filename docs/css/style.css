@@ -387,29 +387,20 @@ main {
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transition: background-color 0.2s ease-in-out; /* transition on base */
   user-select: none;
 }
 
 .accordion-header[aria-expanded="true"] {
-  background: #C6C2FF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-}
-
-@media (hover: hover) {
-  .accordion-header:hover:not([aria-expanded="true"]) {
-    background-color: #D9D6FF;
-  }
-}
-
-.accordion-header:active:not([aria-expanded="true"]) {
   background-color: #C6C2FF;
-  transition-duration: 0.25s;
 }
 
-.accordion-header[aria-expanded="true"]:active {
+button.accordion-header.active:not([aria-expanded="true"]) {
+  background-color: #C6C2FF;
+}
+
+button.accordion-header.active[aria-expanded="true"] {
   background-color: #ECEBFF;
-  transition-duration: 0.25s;
 }
 
 .accordion-arrow {
