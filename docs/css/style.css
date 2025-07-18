@@ -403,6 +403,12 @@ button.accordion-header.active[aria-expanded="true"] {
   background-color: #ECEBFF;
 }
 
+@media (hover: hover) {
+  .accordion-header:hover:not([aria-expanded="true"]) {
+    background-color: #D9D6FF;
+  }
+}
+
 .accordion-arrow {
   display: block;
   width: 1.375rem; /* 22px */
