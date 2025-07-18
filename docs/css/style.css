@@ -386,7 +386,7 @@ main {
   font-weight: 500;
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+/*   touch-action: manipulation; */
   transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   user-select: none;
 }
@@ -408,16 +408,6 @@ main {
 }
 
 .accordion-header[aria-expanded="true"]:active {
-  background-color: #ECEBFF;
-  transition-duration: 0.25s;
-}
-
-.accordion-header.pressed:not([aria-expanded="true"]) {
-  background-color: #C6C2FF;
-  transition-duration: 0.25s;
-}
-
-.accordion-header.pressed[aria-expanded="true"] {
   background-color: #ECEBFF;
   transition-duration: 0.25s;
 }

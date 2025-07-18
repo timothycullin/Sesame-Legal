@@ -139,19 +139,6 @@ headers.forEach(header => {
       header.nextElementSibling.hidden = false;
     }
   });
-
-  // Touch events for mobile pressed state
-  header.addEventListener('touchstart', () => {
-    header.classList.add('pressed');
-  });
-
-  header.addEventListener('touchend', () => {
-    header.classList.remove('pressed');
-  });
-
-  header.addEventListener('touchcancel', () => {
-    header.classList.remove('pressed');
-  });
 });
 
 // ContactForm.js
