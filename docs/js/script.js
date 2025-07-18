@@ -140,22 +140,17 @@ headers.forEach(header => {
     }
   });
 
-  // Mobile touch feedback for pressing
+  // Mobile touch feedback for pressing using CSS class
   header.addEventListener('touchstart', () => {
-    header.style.backgroundColor = '#C6C2FF';  // immediate pressed color
-    header.style.transitionDuration = '0s';    // no fade delay
+    header.classList.add('pressed');
   });
 
   header.addEventListener('touchend', () => {
-    const isExpanded = header.getAttribute('aria-expanded') === 'true';
-    header.style.backgroundColor = isExpanded ? '#C6C2FF' : '#ECEBFF';
-    header.style.transitionDuration = '0.25s'; // smooth fade back
+    header.classList.remove('pressed');
   });
 
   header.addEventListener('touchcancel', () => {
-    const isExpanded = header.getAttribute('aria-expanded') === 'true';
-    header.style.backgroundColor = isExpanded ? '#C6C2FF' : '#ECEBFF';
-    header.style.transitionDuration = '0.25s';
+    header.classList.remove('pressed');
   });
 });
 
