@@ -141,6 +141,9 @@ headers.forEach(header => {
   });
 });
 
+document.body.addEventListener("touchstart", function () { }, { passive: true });
+
+
 // ContactForm.js
 function validateForm(event) {
   const textarea = document.getElementById('message');
