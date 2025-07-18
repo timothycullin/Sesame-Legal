@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ];
       return transforms[i] || transforms[transforms.length - 1];
     }
-    
-  function rotateCards(direction) {
+
+    function rotateCards(direction) {
       if (direction === "prev") {
         const last = currentCards.pop();
         currentCards.unshift(last);

@@ -409,6 +409,7 @@ main {
 
 .accordion-header[aria-expanded="true"]:active {
   background-color: #ECEBFF;
+  transition-duration: 0.15s;
 }
 
 .accordion-arrow {
