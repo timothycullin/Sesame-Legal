@@ -155,7 +155,6 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('touchcancel', () => header.classList.remove('active'));
 });
 
-
 // ContactForm.js
 function validateForm(event) {
   const textarea = document.getElementById('message');
@@ -167,4 +166,5 @@ function validateForm(event) {
   return true;
 }
 
-
+// <a>.js
+document.addEventListener("touchstart", () => { }, true);

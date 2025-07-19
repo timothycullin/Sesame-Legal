@@ -102,10 +102,10 @@ main {
   user-select: none;
 }
 
-.hero-btn:hover {
-  color: #000;
-  background-color: #99e600;
-}
+ .hero-btn:hover {
+    color: #000;
+    background-color: #99e600;
+  }
 
 .hero-btn:active {
   color: #000;
@@ -404,7 +404,7 @@ button.accordion-header.active[aria-expanded="true"] {
 }
 
 @media (hover: hover) {
-  .accordion-header:hover:not([aria-expanded="true"]) {
+  .accordion-header:not(.active):hover:not([aria-expanded="true"]) {
     background-color: #D9D6FF;
   }
 }
