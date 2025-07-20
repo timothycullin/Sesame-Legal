@@ -82,37 +82,6 @@ main {
   color: #99e600;
 }
 
-.hero-btn {
-  display: inline-block;
-  height: 2.75rem; /* 44px */
-  padding: 0 1.5rem; /* 24px */
-  color: #fff;
-  border: none;
-  background-color: #000;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1rem; /* 16px */
-  font-weight: 500;
-  line-height: 2.75rem; /* 44px */
-  -webkit-tap-highlight-color: transparent;
-  text-align: center;
-  text-decoration: none;
-  touch-action: manipulation;
-  transition: background-color 0.15s ease, color 0.15s ease;
-  user-select: none;
-}
-
- .hero-btn:hover {
-    color: #000;
-    background-color: #99e600;
-  }
-
-.hero-btn:active {
-  color: #000;
-  background-color: #99e600;
-  transition: none;
-}
-
 @media (max-width: 768px) {
   .hero-text {
     font-size: 5rem; /* 80px */
@@ -121,11 +90,6 @@ main {
   .hero-container {
     width: 100%;
     padding: 0 1.5rem; /* 24px */
-  }
-
-  .hero-btn {
-    width: 100%;
-    margin-top: 1rem; /* 16px */
   }
 }
 
