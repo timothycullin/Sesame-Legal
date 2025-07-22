@@ -168,3 +168,6 @@ function validateForm(event) {
 
 // <a>.js
 document.addEventListener("touchstart", () => { }, true);
+
+
+
