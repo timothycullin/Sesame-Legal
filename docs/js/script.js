@@ -209,6 +209,28 @@ form.addEventListener('submit', function (event) {
   form.submit();
 });
 
+// Real-time tooltip toggle based on validity
+form.querySelectorAll('input, textarea').forEach((input) => {
+  input.addEventListener('input', () => {
+    const wrapper = input.closest('.input-wrapper');
+    const tooltip = wrapper.querySelector('.error-tooltip');
+
+    // For message field, also check max length manually
+    const isMessage = input.id === 'message';
+    const overMax = isMessage && input.value.length > 1000;
+
+    if (input.checkValidity() && !overMax) {
+      wrapper.classList.remove('error');
+      tooltip.textContent = '';
+    } else {
+      wrapper.classList.add('error');
+      tooltip.textContent = isMessage && overMax
+        ? "Please keep your message under 1000 characters."
+        : input.validationMessage;
+    }
+  });
+});
+
 // ContactForm.js
 // Button Active State Toggle on Mouse and Touch Events
 const submitButton = document.querySelector('.contact-form button');
