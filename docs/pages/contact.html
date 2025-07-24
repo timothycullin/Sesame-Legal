@@ -122,24 +122,43 @@
         confidentially.
       </p>
 
-      <form class="contact-form" aria-labelledby="contact-heading" onsubmit="return validateForm(event)">
+      <form class="contact-form" aria-labelledby="contact-heading" id="contactForm" novalidate>
+        <div class="input-wrapper">
+          <label for="name">Full Name</label>
+          <div class="input-with-tooltip">
+            <input type="text" id="name" name="name" required maxlength="50" placeholder="e.g. Jane Doe" />
+            <div class="error-tooltip" aria-live="polite"></div>
+          </div>
+        </div>
 
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required maxlength="50" placeholder="Your full name" />
+        <div class="input-wrapper">
+          <label for="phone">Phone Number</label>
+          <div class="input-with-tooltip">
+            <input type="tel" id="phone" name="phone" maxlength="20" placeholder="e.g. 0400 000 000"
+              pattern="[0-9\s\-\+\(\)]*" />
+            <div class="error-tooltip" aria-live="polite"></div>
+          </div>
+        </div>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" maxlength="20" placeholder="Your phone number"
-          pattern="[0-9\s\-\+\(\)]*" />
+        <div class="input-wrapper">
+          <label for="email">Email Address</label>
+          <div class="input-with-tooltip">
+            <input type="email" id="email" name="email" required maxlength="100"
+              placeholder="e.g. hello@sesamelegal.com" />
+            <div class="error-tooltip" aria-live="polite"></div>
+          </div>
+        </div>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required maxlength="100" placeholder="Your email" />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required maxlength="1000"
-          placeholder="Write your message here"></textarea>
+        <div class="input-wrapper">
+          <label for="message">Message</label>
+          <div class="input-with-tooltip">
+            <textarea id="message" name="message" rows="5" required maxlength="1000"
+              placeholder="Write your message here"></textarea>
+            <div class="error-tooltip" aria-live="polite"></div>
+          </div>
+        </div>
 
         <button type="submit">Send Message</button>
-
       </form>
 
     </section>

@@ -1,3 +1,6 @@
+// Dummy touchstart listener to ensure touch events trigger active states on mobile browsers
+document.addEventListener("touchstart", () => { }, true);
+
 // menu-closeBtn.js
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('menu-toggle');
@@ -156,18 +159,64 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 });
 
 // ContactForm.js
-function validateForm(event) {
-  const textarea = document.getElementById('message');
-  if (textarea.value.length > 1000) {
-    alert("Please keep your message under 1000 characters.");
-    event.preventDefault();
+// ContactForm validation handler
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  // Clear all previous errors
+  form.querySelectorAll('.input-wrapper').forEach(wrapper => {
+    wrapper.classList.remove('error');
+    const tooltip = wrapper.querySelector('.error-tooltip');
+    if (tooltip) tooltip.textContent = '';
+  });
+
+  const inputs = Array.from(form.querySelectorAll('input, textarea'));
+  let firstInvalid = null;
+
+  // Find the first invalid input
+  for (const input of inputs) {
+    if (!input.checkValidity()) {
+      firstInvalid = input;
+      break;
+    }
+  }
+
+  // Custom validation: message length
+  const message = form.querySelector('#message');
+  if (!firstInvalid && message.value.length > 1000) {
+    firstInvalid = message;
+  }
+
+  // If there's an invalid field, show error
+  if (firstInvalid) {
+    const wrapper = firstInvalid.closest('.input-wrapper');
+    wrapper.classList.add('error');
+    const tooltip = wrapper.querySelector('.error-tooltip');
+
+    if (firstInvalid === message && message.value.length > 1000) {
+      tooltip.textContent = "Please keep your message under 1000 characters.";
+    } else {
+      tooltip.textContent = firstInvalid.validationMessage;
+    }
+
+    firstInvalid.focus();
     return false;
   }
-  return true;
-}
 
-// <a>.js
-document.addEventListener("touchstart", () => { }, true);
+  // No validation errors - proceed with form submission
+  form.submit();
+});
 
+// ContactForm.js
+// Button Active State Toggle on Mouse and Touch Events
+const submitButton = document.querySelector('.contact-form button');
 
+submitButton.addEventListener('mousedown', () => submitButton.classList.add('active'));
+submitButton.addEventListener('mouseup', () => submitButton.classList.remove('active'));
+submitButton.addEventListener('mouseleave', () => submitButton.classList.remove('active'));
 
+submitButton.addEventListener('touchstart', () => submitButton.classList.add('active'));
+submitButton.addEventListener('touchend', () => submitButton.classList.remove('active'));
+submitButton.addEventListener('touchcancel', () => submitButton.classList.remove('active'));

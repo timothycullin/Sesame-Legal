@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+/*   outline: 1px solid red; */
 }
 
 *,
@@ -57,8 +58,8 @@ main {
   flex-direction: column;
   justify-content: center;
   margin-top: 4.25rem; /* 68px */
-  min-height: 65vh;
-  min-height: 65svh;
+  min-height: 65vh;   
+  min-height: 65svh; 
   text-align: center;
 }
 
@@ -665,7 +666,7 @@ button.accordion-header.active[aria-expanded="true"] {
 }
 
 /* ------------------------------------------------------------ */
-/* CONTACT PAGE CODE (NON-INDEX-PAGE) */
+/* CONTACT FORM (NON-INDEX-PAGE) */
 
 .contact-form {
   margin: 0 auto;
@@ -674,27 +675,44 @@ button.accordion-header.active[aria-expanded="true"] {
 
 .contact-form label {
   display: block;
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;          /* 16px */
   font-weight: 500;
-  margin-bottom: 0.5rem; /* 8px */
+  margin-bottom: 0.5rem;    /* 8px */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+}
+
+.input-with-tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.75rem 1rem; /* 12px 16px */
+  height: 2.75rem;          /* 44px */
+  padding: 0.75rem 1rem;    /* 12px 16px */
   color: #000;
   border: none;
   background-color: #ECEBFF;
-  border-radius: 6px;
+  border-radius: 6px;       /* keep px */
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: 1rem; /* 16px */
-  margin-bottom: 1.5rem; /* 24px */
+  font-size: 1rem;          /* 16px */
+  margin-bottom: 1.5rem;    /* 24px */
   overflow-wrap: break-word;
   -webkit-tap-highlight-color: transparent;
   transition: box-shadow 0.3s ease;
+}
+
+.contact-form textarea {
+  height: auto;
+  max-height: 360px;        /* keep px */
+  min-height: 11.25rem;     /* 180px */
+  overflow-y: auto;
+  padding-bottom: 0.75rem;  /* 12px */
+  padding-top: 0.75rem;     /* 12px */
+  resize: vertical;
 }
 
 input::placeholder,
@@ -703,41 +721,69 @@ textarea::placeholder {
   opacity: 1;
 }
 
-.contact-form input {
-  height: 2.75rem; /* 44px */
-}
-
-.contact-form textarea {
-  max-height: 18.75rem; /* 300px */
-  min-height: 11.25rem; /* 180px */
-  overflow-y: auto;
-  resize: vertical;
-}
-
 .contact-form input:focus,
 .contact-form textarea:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); /* keep px */
   outline: none;
 }
 
 .contact-form button {
   display: block;
   width: 100%;
-  height: 2.75rem; /* 44px */
+  height: 2.75rem;          /* 44px */
   margin: 1.5rem auto 2.5rem; /* 24px auto 40px */
   color: #fff;
   border: none;
   background-color: #000;
-  border-radius: 6px;
+  border-radius: 6px;       /* keep px */
   cursor: pointer;
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;          /* 16px */
   font-weight: 500;
-  line-height: 2.75rem; /* 44px */
+  line-height: 2.75rem;     /* 44px */
   -webkit-tap-highlight-color: transparent;
   text-align: center;
   transition: opacity 0.15s ease;
   user-select: none;
+}
+
+form.contact-form button.active {
+  background-color: #000;
+  opacity: 0.7;
+  transition: none;
+}
+
+.error-tooltip {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  z-index: 10;
+  padding: 0.25rem 0.5rem;  /* 4px 8px */
+  color: white;
+  background: #b00020;
+  border-radius: 4px;       /* keep px */
+  font-size: 0.75rem;       /* 12px */
+  margin-bottom: 0.375rem;  /* 6px */
+  opacity: 0;
+  pointer-events: none;
+  transform: none;
+  white-space: nowrap;
+}
+
+.input-wrapper.error .error-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.error-tooltip::after {
+  position: absolute;
+  top: 100%;
+  right: 6px;               /* keep px */
+  border-color: #b00020 transparent transparent transparent;
+  border-style: solid;
+  border-width: 6px;        /* keep px */
+  content: '';
+  transform: none;
 }
 
 @media (hover: hover) {
@@ -745,12 +791,6 @@ textarea::placeholder {
     background-color: #000;
     opacity: 0.85;
   }
-}
-
-.contact-form button:active {
-  background-color: #000;
-  opacity: 0.7;
-  transition: none;
 }
 
 @media (max-width: 768px) {
