@@ -8,7 +8,7 @@
   z-index: 9999;
   display: flex;
   width: 100%;
-  height: 5.5rem;        /* 88px */
+  height: 4.25rem;        /* 68px */
   padding: 0 1.5rem;      /* 24px */
   align-items: center;
   background-color: #fff;
@@ -33,7 +33,7 @@
 .logo {
   display: block;
   width: auto;
-  height: 3rem;       /* 48px */
+  height: 2.375rem;       /* 38px */
   overflow: visible;
 }
 
@@ -221,14 +221,6 @@
 /* MEDIA QUERIES */
 
 @media (max-width: 768px) { 
-  .top-nav {
-    height: 4.25rem;   /* 68px */
-  }
-
-  .logo {
-    height: 2.375rem;  /* 38px */
-  }
-
   .top-nav .nav-links {
     display: none;
   }
