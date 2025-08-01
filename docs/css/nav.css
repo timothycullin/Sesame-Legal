@@ -38,7 +38,13 @@
 }
 
 .logo-link {
+  display: flex;
+  padding: 0;
+  align-items: center;
   cursor: pointer;
+  justify-content: center;
+  min-height: 2.75rem;   /* 44px */
+  min-width: 2.75rem;    /* 44px */
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
