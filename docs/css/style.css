@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Montserrat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Inter:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -14,12 +14,12 @@
 
 body,
 html {
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  text-size-adjust: 100%; 
 }
 
 :root {
@@ -186,7 +186,7 @@ main {
 
 .deck-card h3 {
   font-size: 1.75rem; /* 28px */
-  font-weight: 500;
+  font-weight: 00;
   margin-bottom: 0.625rem; /* 10px */
 }
 
@@ -310,7 +310,7 @@ main {
   margin: var(--space-xl) auto;
   padding: 0 1.5rem; /* 24px */
   color: #000;
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   max-width: 50rem; /* 800px */
 }
 
@@ -347,9 +347,9 @@ main {
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1.125rem; /* 18px */
-  font-weight: 500;
+  font-weight: 600;
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -405,7 +405,7 @@ button.accordion-header.active[aria-expanded="true"] {
 .accordion-content h3 {
   margin: 0 0 0.5rem; /* 8px */
   font-size: 1rem; /* 16px */
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .accordion-content p {
@@ -444,7 +444,7 @@ button.accordion-header.active[aria-expanded="true"] {
 .learn-more-section {
   padding: var(--space-lg) 0 var(--space-xl);
   color: #000;
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   text-align: center;
 }
 
@@ -487,7 +487,7 @@ button.accordion-header.active[aria-expanded="true"] {
   border-radius: 50px;
   cursor: pointer;
   font-size: 1rem; /* 16px */
-  font-weight: 500;
+  font-weight: 600;
   gap: 0.5rem; /* 8px */
   justify-content: center;
   line-height: 2.75rem; /* 44px */
@@ -581,7 +581,7 @@ button.accordion-header.active[aria-expanded="true"] {
 
 .subheading {
   font-size: 1.25rem; /* 20px */
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 1rem; /* 16px */
 }
 
@@ -676,7 +676,7 @@ button.accordion-header.active[aria-expanded="true"] {
 .contact-form label {
   display: block;
   font-size: 1rem;          /* 16px */
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.5rem;    /* 8px */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -697,7 +697,7 @@ button.accordion-header.active[aria-expanded="true"] {
   border: none;
   background-color: #ECEBFF;
   border-radius: 6px;       /* keep px */
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1rem;          /* 16px */
   margin-bottom: 1.5rem;    /* 24px */
   overflow-wrap: break-word;
@@ -737,9 +737,9 @@ textarea::placeholder {
   background-color: #000;
   border-radius: 6px;       /* keep px */
   cursor: pointer;
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1rem;          /* 16px */
-  font-weight: 500;
+  font-weight: 600;
   line-height: 2.75rem;     /* 44px */
   -webkit-tap-highlight-color: transparent;
   text-align: center;
@@ -815,7 +815,7 @@ form.contact-form button.active {
 
 .lawyer-name {
   font-size: 1.5rem; /* 24px */
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .lawyer-photo {
