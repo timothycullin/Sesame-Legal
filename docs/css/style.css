@@ -736,6 +736,7 @@ textarea::placeholder {
   background-color: #000;
   border-radius: 6px;       /* keep px */
   cursor: pointer;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-size: 1rem;          /* 16px */
   font-weight: 500;
   line-height: 2.75rem;     /* 44px */
