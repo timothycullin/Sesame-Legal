@@ -58,8 +58,8 @@ main {
   flex-direction: column;
   justify-content: center;
   margin-top: 4.25rem; /* 68px */
-  min-height: 50vh;   
-  min-height: 50svh; 
+  min-height: 65vh;   
+  min-height: 65svh; 
   text-align: center;
 }
 
